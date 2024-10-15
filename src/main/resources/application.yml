@@ -1,0 +1,18 @@
+spring:
+  kafka:
+    consumer:
+      group-id: group-1
+      auto-offset-reset: earliest
+      bootstrap-servers: broker:29092
+  data:
+    mongodb:
+      username: ${MONGODB_USER:username}
+      password: ${MONGODB_PASS:password}
+      database: ${MONGODB_NAME:notification_db}
+      host: ${MONGODB_HOST:mongo}
+      port: ${MONGODB_PORT:27017}
+      auto-index-creation: true
+  logging:
+    level:
+      org.springframework: INFO
+      org.springframework.data.mongodb.core.MongoTemplate: DEBUG
